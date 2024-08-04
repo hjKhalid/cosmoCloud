@@ -7,7 +7,7 @@ const FormField = ({ label, name, value, onChange }) => (
       value={value}
       onChange={onChange}
       required
-      className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+      className="mt-1 block h-10 w-full border-gray-300 rounded-md shadow-sm"
     />
   </div>
 );

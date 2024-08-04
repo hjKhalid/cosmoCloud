@@ -12,7 +12,7 @@ const EmployeeList = () => {
 
   const fetchEmployees = async () => {
     const response = await getEmployees();
-    setEmployees(response?.data ? "respone" : null);
+    setEmployees(response?.data);
   };
 
   const handleDelete = async (id) => {
@@ -21,24 +21,24 @@ const EmployeeList = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 align-middle">
-      <h1 className="text-2xl font-bold mb-4 align-middle">Employee List</h1>
-      {employees?.length === 0 ? (
-        <p className="text-gray-500">No Employees in the system</p>
+    <div className="container mx-auto p-6">
+      <h1 className="text-3xl text-center font-bold text-gray-800 mb-6">Employee List</h1>
+      {employees.length === 0 ? (
+        <p className="text-gray-500 text-lg">No Employees in the system</p>
       ) : (
-        <ul className="list-disc pl-5">
-          {employees?.map((employee) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {employees.map((employee) => (
             <EmployeeItem
-              key={employee.emp_id}
+              key={employee._id}
               employee={employee}
-              onDelete={() => handleDelete(employee.emp_id)}
+              onDelete={() => handleDelete(employee._id)}
             />
           ))}
-        </ul>
+        </div>
       )}
       <Link
         to="/add-employee"
-        className="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded"
+        className="mt-6 inline-block bg-blue-600 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-700 transition duration-200"
       >
         Add Employee
       </Link>
