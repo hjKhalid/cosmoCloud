@@ -83,11 +83,7 @@ src/
 │   ├── EmployeeList.tsx
 │   ├── EmployeeDetails.tsx
 │   ├── AddEmployee.tsx
-│   └── __tests__/
-│       ├── EmployeeList.test.tsx
-│       ├── EmployeeDetails.test.tsx
-│       └── AddEmployee.test.tsx
-│
+│   └─
 ├── services/
 │   └── employeeService.ts
 │
